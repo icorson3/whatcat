@@ -41,7 +41,7 @@ app.get('/', function (req, res) {
 
 
 // Once a connection is made to the server, open up the socket communication.
-io.on('connection', function(socket) { 
+io.on('connection', function(socket) {
 
   // When the client emits selfiePath, we are getting the image data passed to the server where we save it locally and send it over to the emotion api to analyze.
   socket.on('selfiePath', function (selfiePath) {
@@ -49,6 +49,7 @@ io.on('connection', function(socket) {
     var data = selfieUrl.replace(/^data:image\/\w+;base64,/, "");
     var buf = new Buffer(data, 'base64');
     fs.writeFileSync('public/image.png', buf);
+    debugger;
     client.emotion.analyzeEmotion({
       path: 'public/image.png',
     }).then(handleResponse, handleError);

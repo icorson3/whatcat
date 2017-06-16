@@ -2,7 +2,7 @@ module.exports = [
 	{
     breedName: 'This is Shiro',
     breedDesc: 'He\'s happy about everything',
-    breedImg: 'public/images/happy-1.png'
+    breedImg: 'public/images/fish-happy-1.png'
   },
   {
     breedName: 'This is Felix',
